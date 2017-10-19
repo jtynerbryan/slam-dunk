@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import $ from 'jquery';
+import ReactHtmlParser from 'react-html-parser';
+
 
 class App extends Component {
 
@@ -14,20 +16,20 @@ class App extends Component {
   }
 
   handleHighlights = (res) => {
-    let decode = $('<div />').html(res[4].data.media_embed.content).text();
+    const highlights = res.filter(story => story.data.link_flair_css_class === "highlights")
+    const iframes = highlights.map(highlight => $('<div />').html(highlight.data.media_embed.content).text())
     this.setState({
-      highlights: decode
+      highlights: iframes
     })
   }
 
   componentDidMount() {
     fetch('http://www.reddit.com/r/nba.json')
     .then(res => res.json())
-    .then(res => console.log(this.handleHighlights(res.data.children)))
+    .then(res => this.handleHighlights(res.data.children))
   }
 
   render() {
-    console.log(this.state.highlights);
     return (
       <div className="App">
         <header className="App-header">
@@ -37,7 +39,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <div dangerouslySetInnerHTML={{ __html: `${this.state.highlights}` }} />
+        {ReactHtmlParser(this.state.highlights.join(''))}
       </div>
     );
   }
