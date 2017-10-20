@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
 
 
@@ -15,25 +14,18 @@ class App extends Component {
     }
   }
 
-  handleHighlights = (res) => {
-    console.log(res)
-    const highlights = res.filter(story => story.data.link_flair_css_class === "highlights" && story.data.media_embed.content)
-    highlights.forEach(highlight => highlight.data.media_embed.content = $('<div />').html(highlight.data.media_embed.content).text())
-    this.setState({
-      highlights: highlights
-    })
-  }
-
   componentDidMount() {
-    fetch('http://www.reddit.com/r/nba.json')
+    fetch('http://localhost:3000/api/v1/get_highlights')
     .then(res => res.json())
-    .then(res => this.handleHighlights(res.data.children))
+    .then(res => this.setState({
+      highlights: res.highlights
+    }))
   }
 
   render() {
     if (this.state.highlights.length > 0) {
       console.log(this.state.highlights);
-      const highlights = this.state.highlights.map((highlight, index) => <div key={index}><h3>{highlight.data.title}</h3>{ReactHtmlParser(highlight.data.media_embed.content)}</div>)
+      const highlights = this.state.highlights.map((highlight, index) => <div key={index}><h3>{highlight.title}</h3>{ ReactHtmlParser(ReactHtmlParser(highlight.media))}</div>)
       return (
         <div className="App">
           <header className="App-header">
