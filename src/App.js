@@ -16,10 +16,11 @@ class App extends Component {
   }
 
   handleHighlights = (res) => {
-    const highlights = res.filter(story => story.data.link_flair_css_class === "highlights")
-    const iframes = highlights.map(highlight => $('<div />').html(highlight.data.media_embed.content).text())
+    console.log(res)
+    const highlights = res.filter(story => story.data.link_flair_css_class === "highlights" && story.data.media_embed.content)
+    highlights.forEach(highlight => highlight.data.media_embed.content = $('<div />').html(highlight.data.media_embed.content).text())
     this.setState({
-      highlights: iframes
+      highlights: highlights
     })
   }
 
@@ -30,18 +31,36 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        {ReactHtmlParser(this.state.highlights.join(''))}
-      </div>
-    );
+    if (this.state.highlights.length > 0) {
+      console.log(this.state.highlights);
+      const highlights = this.state.highlights.map((highlight, index) => <div key={index}><h3>{highlight.data.title}</h3>{ReactHtmlParser(highlight.data.media_embed.content)}</div>)
+      return (
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="App-title">Welcome to React</h1>
+          </header>
+          <p className="App-intro">
+            To get started, edit <code>src/App.js</code> and save to reload.
+          </p>
+          {highlights}
+        </div>
+      )
+    } else {
+      console.log(this.state.highlights);
+      return (
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="App-title">Welcome to React</h1>
+          </header>
+          <p className="App-intro">
+            To get started, edit <code>src/App.js</code> and save to reload.
+          </p>
+        </div>
+      );
+    }
+
   }
 }
 
