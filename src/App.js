@@ -1,31 +1,22 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { getHighlights } from './actions/highlights'
 import ReactHtmlParser from 'react-html-parser';
 
 
 class App extends Component {
 
-  constructor() {
-    super()
-
-    this.state = {
-      highlights: []
-    }
-  }
-
   componentDidMount() {
-    fetch('http://localhost:3000/api/v1/get_highlights')
-    .then(res => res.json())
-    .then(res => this.setState({
-      highlights: res.highlights
-    }))
+    this.props.getHighlights()
   }
 
   render() {
-    if (this.state.highlights.length > 0) {
-      console.log(this.state.highlights);
-      const highlights = this.state.highlights.map((highlight, index) => <div key={index}><h3>{highlight.title}</h3>{ ReactHtmlParser(ReactHtmlParser(highlight.media))}</div>)
+    if (this.props.highlights.length > 0) {
+      console.log(this.props.highlights);
+      const highlights = this.props.highlights.map((highlight, index) => <div key={index}><h3>{highlight.title}</h3>{ ReactHtmlParser(ReactHtmlParser(highlight.media))}</div>)
       return (
         <div className="App">
           <header className="App-header">
@@ -41,7 +32,7 @@ class App extends Component {
         </div>
       )
     } else {
-      console.log(this.state.highlights);
+      console.log(this.props.highlights);
       return (
         <div className="App">
           <header className="App-header">
@@ -54,8 +45,20 @@ class App extends Component {
         </div>
       );
     }
+  }
 
+}
+
+function mapStateToProps(state) {
+  return {
+    highlights: state.highlights
   }
 }
 
-export default App;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    getHighlights
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
