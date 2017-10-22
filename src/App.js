@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getHighlights } from './actions/highlights'
 import ReactHtmlParser from 'react-html-parser';
+import Navbar from './components/Navbar'
 
 
 class App extends Component {
@@ -19,29 +20,14 @@ class App extends Component {
       const highlights = this.props.highlights.map((highlight, index) => <div key={index}><h3>{highlight.title}</h3>{ ReactHtmlParser(ReactHtmlParser(highlight.media))}</div>)
       return (
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-
-            {highlights}
-
+          <Navbar/>
+          {highlights}
         </div>
       )
     } else {
       console.log(this.props.highlights);
       return (
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
         </div>
       );
     }
