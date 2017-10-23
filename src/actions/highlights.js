@@ -7,3 +7,9 @@ export function getHighlights() {
     })
   }
 }
+
+export function searchHighlights(searchParams) {
+  return (dispatch) => {
+    dispatch({type: "Search_Highlights", payload: searchParams})
+  }
+}

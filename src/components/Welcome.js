@@ -8,10 +8,14 @@ class Welcome extends React.Component {
 
   render () {
     return (
-      <div>
+      <div >
         <Navbar/>
-        <h1>Slam Dunk delivers the latest highlights from across the NBA</h1>
-        <Button onClick={() => this.props.history.push('/highlights')}>Highlights</Button>
+        <div className="welcome">
+          <h1>Slam Dunk</h1>
+          <h2>The latest highlights from across the NBA</h2>
+          <br></br>
+          <Button onClick={() => this.props.history.push('/highlights')}>Highlights</Button>
+        </div>
       </div>
     )
   }

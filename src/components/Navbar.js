@@ -31,7 +31,7 @@ class Navbar extends Component {
         <Menu.Item
           name='Search'
           active={activeItem === 'search'}
-          onClick={this.handleItemClick}
+          onClick={() => this.props.history.push('/search')}
         >
           Search
         </Menu.Item>
