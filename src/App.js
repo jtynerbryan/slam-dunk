@@ -1,52 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Route } from 'react-router-dom'
+import { withRouter } from 'react-router'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { getHighlights } from './actions/highlights'
-import ReactHtmlParser from 'react-html-parser';
 import Navbar from './components/Navbar'
-import LazyLoad from 'react-lazy-load';
+import HighlightCollection from './components/HighlightCollection'
+import { Button } from 'semantic-ui-react'
 
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.getHighlights()
-  }
-
   render() {
-    if (this.props.highlights.length > 0) {
-      console.log(this.props.highlights);
-      const highlights = this.props.highlights.map((highlight, index) => {
-        return (
-          <LazyLoad height={400} offsetVertical={300} key={index}>
-            <div>
-              <h3>{highlight.title}</h3>
-              { ReactHtmlParser(ReactHtmlParser(highlight.media))}
-            </div>
-          </LazyLoad>
-        )
-      })
-
-      return (
-        <div className="App">
-          <Navbar/>
-          <h1>Highlights</h1>
-          <div className="filler">
-            {highlights}
-          </div>
-        </div>
-      )
-    } else {
-      console.log(this.props.highlights);
-      return (
-        <div className="App">
-        </div>
-      );
-    }
+    console.log(this.props)
+    return (
+      <div className="App">
+      <Route exact path='/highlights' component={HighlightCollection}/>
+      <Navbar/>
+      <Button onClick={() => this.props.history.push('/highlights')}>Highlights</Button>
+      </div>
+    )
   }
-
-
 
 }
 
@@ -56,10 +29,4 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    getHighlights
-  }, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, null)(App))
