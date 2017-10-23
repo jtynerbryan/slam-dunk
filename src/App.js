@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getHighlights } from './actions/highlights'
 import ReactHtmlParser from 'react-html-parser';
 import Navbar from './components/Navbar'
+import LazyLoad from 'react-lazy-load';
 
 
 class App extends Component {
@@ -17,11 +17,24 @@ class App extends Component {
   render() {
     if (this.props.highlights.length > 0) {
       console.log(this.props.highlights);
-      const highlights = this.props.highlights.map((highlight, index) => <div key={index}><h3>{highlight.title}</h3>{ ReactHtmlParser(ReactHtmlParser(highlight.media))}</div>)
+      const highlights = this.props.highlights.map((highlight, index) => {
+        return (
+          <LazyLoad height={400} offsetVertical={300} key={index}>
+            <div>
+              <h3>{highlight.title}</h3>
+              { ReactHtmlParser(ReactHtmlParser(highlight.media))}
+            </div>
+          </LazyLoad>
+        )
+      })
+
       return (
         <div className="App">
           <Navbar/>
-          {highlights}
+          <h1>Highlights</h1>
+          <div className="filler">
+            {highlights}
+          </div>
         </div>
       )
     } else {
@@ -32,6 +45,8 @@ class App extends Component {
       );
     }
   }
+
+
 
 }
 

@@ -35,9 +35,11 @@ export default class Navbar extends Component {
           Search
         </Menu.Item>
         <Menu.Item
+          position='right'
           name='GitHub'
           active={activeItem === 'github'}
           onClick={this.handleItemClick}
+          href='http://github.com/jtynerbryan' target="_blank"
         >
           GitHub
         </Menu.Item>
