@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
+import { withRouter } from 'react-router'
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   state = {}
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -14,7 +15,7 @@ export default class Navbar extends Component {
         <Menu.Item
           name='Slam Dunk'
           active={activeItem === 'slam dunk'}
-          onClick={this.handleItemClick}
+          onClick={() => this.props.history.push('/')}
         >
           Slam Dunk
         </Menu.Item>
@@ -22,7 +23,7 @@ export default class Navbar extends Component {
         <Menu.Item
           name='Highlights'
           active={activeItem === 'highlights'}
-          onClick={this.handleItemClick}
+          onClick={() => this.props.history.push('/highlights')}
         >
           Highlights
         </Menu.Item>
@@ -47,3 +48,5 @@ export default class Navbar extends Component {
     )
   }
 }
+
+export default withRouter(Navbar)
