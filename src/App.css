@@ -10,8 +10,9 @@ iframe {
   margin-top: 5%;
 }
 
-#form-input {
+form {
   width: 50%;
+  margin: 0 auto;
 }
 
 #loader {

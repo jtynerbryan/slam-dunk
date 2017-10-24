@@ -5,6 +5,7 @@ import { searchHighlights } from '../actions/highlights'
 import { getHighlights } from '../actions/highlights'
 import Navbar from './Navbar'
 import Loader from './Loader'
+import FilteredHighlightCollection from './FilteredHighlightCollection'
 import { Button, Form,} from 'semantic-ui-react'
 
 class Search extends React.Component {
@@ -41,11 +42,12 @@ class Search extends React.Component {
         <div className="App">
           <Navbar/>
           <h2>Search for highlights</h2>
-          <h3>Most highlight titles reference players, nicknames, or actions (dunk, slam, etc.)</h3>
           <Form onSubmit={this.handleSubmit}>
-            <Form.Input id="form-input"label="Search" placeholder="search" onChange={this.handleChange}></Form.Input>
+            <Form.Input placeholder="Most highlight titles reference players, nicknames, or actions (dunk, slam, etc.)" onChange={this.handleChange}></Form.Input>
             <Button type="submit">Submit</Button>
           </Form>
+          <br></br>
+          <FilteredHighlightCollection/>
         </div>
       )
     } else {
