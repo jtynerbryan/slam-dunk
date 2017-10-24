@@ -8,7 +8,7 @@ class Welcome extends React.Component {
 
   render () {
     return (
-      <div >
+      <div>
         <Navbar/>
         <div className="welcome">
           <h1>Slam Dunk</h1>

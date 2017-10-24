@@ -8,7 +8,6 @@ import Search from './components/Search'
 class App extends Component {
 
   render() {
-    console.log(this.props)
     return (
       <div className="App">
         <Route path='/highlights' component={HighlightCollection}/>
@@ -19,7 +18,5 @@ class App extends Component {
   }
 
 }
-
-
 
 export default App

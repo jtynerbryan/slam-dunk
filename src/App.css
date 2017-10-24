@@ -13,3 +13,9 @@ iframe {
 #form-input {
   width: 50%;
 }
+
+#loader {
+  background-image: url('court.jpg');
+  height: 100vh;
+  color: white;
+}
