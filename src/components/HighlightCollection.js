@@ -17,7 +17,7 @@ class HighlightCollection extends React.Component {
       console.log(this.props.highlights);
       const highlights = this.props.highlights.map((highlight, index) => {
         return (
-          <LazyLoad height={400} offsetVertical={400} key={index}>
+          <LazyLoad height={430} offsetVertical={400} key={index}>
             <div>
               <h3>{highlight.title}</h3>
               { ReactHtmlParser(ReactHtmlParser(highlight.media))}
