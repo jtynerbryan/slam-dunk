@@ -45,3 +45,118 @@ form {
   height: 100vh;
   color: white;
 }
+
+@media (max-width: 1403px) {
+
+  #welcome-h1 {
+    width: 45%;
+  }
+
+  #welcome-h2 {
+    width: 52%;
+  }
+}
+
+@media (max-width: 1388px) {
+
+  #welcome-h1 {
+    width: 48%;
+  }
+
+  #welcome-h2 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1388px) {
+
+  #welcome-h1 {
+    width: 43%;
+  }
+
+  #welcome-h2 {
+    width: 51%;
+  }
+}
+
+@media (max-width: 1261px) {
+
+  #welcome-h1 {
+    width: 55%;
+  }
+
+  #welcome-h2 {
+    width: 58%;
+  }
+}
+
+@media (max-width: 1225px) {
+
+  #welcome-h1 {
+    width: 45%;
+  }
+
+  #welcome-h2 {
+    font-size: 2em;
+    width: 54%;
+  }
+}
+
+@media (max-width: 1113px) {
+
+  #welcome-h1 {
+    width: 55%;
+  }
+
+  #welcome-h2 {
+    width: 54%;
+  }
+}
+
+@media (max-width: 1075px) {
+
+  #welcome-h1 {
+    width: 55%;
+  }
+
+  #welcome-h2 {
+    width: 64%;
+  }
+}
+
+
+@media (max-width: 966px) {
+
+  #welcome-h1 {
+    width: 55%;
+  }
+
+  #welcome-h2 {
+    width: 58%;
+  }
+}
+
+@media (max-width: 915px) {
+
+  #welcome-h1 {
+    width: 75%;
+  }
+
+  #welcome-h2 {
+    font-size: 2em;
+    width: 78%;
+  }
+}
+
+@media (max-width: 700px) {
+
+  #welcome-h1 {
+    font-size: 5em;
+    width: 60%;
+  }
+
+  #welcome-h2 {
+    font-size: 2em;
+    width: 84%;
+  }
+}
