@@ -14,12 +14,13 @@ class HighlightCollection extends React.Component {
   }
 
   render() {
+    console.log(this.props.highlights);
     if (this.props.highlights.length > 0) {
       const highlights = this.props.highlights.map((highlight, index) => {
         return (
-          <LazyLoad height={430} offsetVertical={400} key={index}>
+          <LazyLoad height={430} offsetVertical={500} key={index}>
             <div>
-              <h3>{highlight.title}</h3>
+              <h3>{highlight.title} ({highlight.date_created.slice(0,10)})</h3>
               { ReactHtmlParser(ReactHtmlParser(highlight.media))}
             </div>
           </LazyLoad>

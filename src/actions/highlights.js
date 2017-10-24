@@ -13,3 +13,9 @@ export function searchHighlights(searchParams) {
     dispatch({type: "Search_Highlights", payload: searchParams})
   }
 }
+
+export function clearFilteredHighlights() {
+  return (dispatch) => {
+    dispatch({type: "Clear_Filtered_Highlights"})
+  }
+}

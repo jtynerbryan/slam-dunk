@@ -7,7 +7,9 @@ iframe {
 }
 
 .welcome {
-  margin-top: 5%;
+  background-image: url('hoop.jpg');
+  height: 100vh;
+  color: white;
 }
 
 form {

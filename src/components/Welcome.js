@@ -8,9 +8,9 @@ class Welcome extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="welcome">
         <Navbar/>
-        <div className="welcome">
+        <div >
           <h1>Slam Dunk</h1>
           <h2>The latest highlights from across the NBA</h2>
           <br></br>

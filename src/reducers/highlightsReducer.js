@@ -1,6 +1,7 @@
 function highlightsReducer(state = {
   highlights: [],
-  filteredHighlights: []
+  filteredHighlights: [],
+  search: ""
 }, action) {
   switch (action.type) {
     case 'GET_HIGHLIGHTS':
@@ -12,8 +13,11 @@ function highlightsReducer(state = {
         return highlight.title.toLowerCase().includes(action.payload.toLowerCase())
       })
       return Object.assign({}, state, {
-        filteredHighlights: filteredHighlights
+        filteredHighlights: filteredHighlights,
+        search: action.payload
       })
+    case 'Clear_Filtered_Highlights':
+        return state.highlights = []
     default:
       return state
   }

@@ -9,7 +9,7 @@ class FilteredHighlightCollection extends React.Component {
     if (this.props.filteredHighlights.length > 0) {
       const highlights = this.props.filteredHighlights.map((highlight, index) => {
         return (
-          <LazyLoad height={430} offsetVertical={400} key={index}>
+          <LazyLoad offsetVertical={800} key={index}>
             <div>
               <h3>{highlight.title}</h3>
               { ReactHtmlParser(ReactHtmlParser(highlight.media))}
@@ -21,6 +21,7 @@ class FilteredHighlightCollection extends React.Component {
       return (
         <div className="App">
           <div className="filler">
+            <h2>{this.props.filteredHighlights.length} result(s) for '{this.props.search}'</h2>
             {highlights}
           </div>
         </div>
@@ -38,7 +39,8 @@ class FilteredHighlightCollection extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    filteredHighlights: state.filteredHighlights
+    filteredHighlights: state.filteredHighlights,
+    search: state.search
   }
 }
 
