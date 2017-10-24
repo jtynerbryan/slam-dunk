@@ -9,7 +9,7 @@ class FilteredHighlightCollection extends React.Component {
     if (this.props.filteredHighlights.length > 0) {
       const highlights = this.props.filteredHighlights.map((highlight, index) => {
         return (
-          <LazyLoad offsetVertical={800} key={index}>
+          <LazyLoad height={430} offsetVertical={800} key={index}>
             <div>
               <h3>{highlight.title} ({highlight.date_created.slice(0,10)})</h3>
               { ReactHtmlParser(ReactHtmlParser(highlight.media))}
