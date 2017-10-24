@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { getHighlights } from '../actions/highlights'
 import ReactHtmlParser from 'react-html-parser';
 import Navbar from './Navbar'
+import Loader from './Loader'
 import LazyLoad from 'react-lazy-load';
 
 class HighlightCollection extends React.Component {
@@ -14,7 +15,6 @@ class HighlightCollection extends React.Component {
 
   render() {
     if (this.props.highlights.length > 0) {
-      console.log(this.props.highlights);
       const highlights = this.props.highlights.map((highlight, index) => {
         return (
           <LazyLoad height={430} offsetVertical={400} key={index}>
@@ -36,13 +36,9 @@ class HighlightCollection extends React.Component {
         </div>
       )
     } else {
-      console.log(this.props.highlights);
       return (
-        <div className="App" id="loader">
-        <Navbar/>
-          <h1>Loading Highlights...</h1>
-        </div>
-      );
+        <Loader/>
+      )
     }
   }
 

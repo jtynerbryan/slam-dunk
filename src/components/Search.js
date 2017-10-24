@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { searchHighlights } from '../actions/highlights'
 import { getHighlights } from '../actions/highlights'
 import Navbar from './Navbar'
+import Loader from './Loader'
 import { Button, Form,} from 'semantic-ui-react'
 
 class Search extends React.Component {
@@ -49,14 +50,12 @@ class Search extends React.Component {
       )
     } else {
         return (
-          <div className="App" id="loader">
-          <Navbar/>
-            <h1>Loading Highlights...</h1>
-          </div>
+          <Loader/>
         )
     }
 
   }
+
 }
 
 function mapStateToProps(state) {
