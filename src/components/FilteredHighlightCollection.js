@@ -11,7 +11,7 @@ class FilteredHighlightCollection extends React.Component {
         return (
           <LazyLoad offsetVertical={800} key={index}>
             <div>
-              <h3>{highlight.title}</h3>
+              <h3>{highlight.title} ({highlight.date_created.slice(0,10)})</h3>
               { ReactHtmlParser(ReactHtmlParser(highlight.media))}
             </div>
           </LazyLoad>

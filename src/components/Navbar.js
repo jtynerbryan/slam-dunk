@@ -11,7 +11,7 @@ class Navbar extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu>
+      <Menu inverted>
         <Menu.Item
           name='Slam Dunk'
           active={activeItem === 'slam dunk'}

@@ -10,7 +10,7 @@ class Welcome extends React.Component {
     return (
       <div className="welcome">
         <Navbar/>
-        <div >
+        <div id="welcome-header">
           <h1>Slam Dunk</h1>
           <h2>The latest highlights from across the NBA</h2>
           <br></br>
