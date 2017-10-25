@@ -36,7 +36,6 @@ class Search extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     if (this.props.highlights.length > 0) {
       return (
         <div className="App">
