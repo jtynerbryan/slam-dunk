@@ -16,8 +16,6 @@ function highlightsReducer(state = {
         filteredHighlights: filteredHighlights,
         search: action.payload
       })
-    case 'Clear_Filtered_Highlights':
-        return state.highlights = []
     default:
       return state
   }
