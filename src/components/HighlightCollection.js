@@ -11,7 +11,9 @@ import { Button } from 'semantic-ui-react'
 class HighlightCollection extends React.Component {
 
   componentDidMount() {
-    this.props.getHighlights()
+    if (this.props.highlights.length === 0) {
+      this.props.getHighlights()
+    }
   }
 
   render() {
