@@ -3,7 +3,18 @@
 }
 
 iframe {
-  margin: 10px;
+  height: 400px;
+}
+
+div.LazyLoad.is-visible {
+  margin: 20px;
+}
+
+div.ui.divider {
+  width: 70%;
+  margin: 0px auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .welcome {
@@ -146,6 +157,16 @@ form {
     font-size: 2em;
     width: 78%;
   }
+}
+
+@media (max-width: 716px) {
+
+  iframe {
+    height: 350px;
+    /*margin: 0 auto;*/
+    width: 70%;
+  }
+
 }
 
 @media (max-width: 700px) {
