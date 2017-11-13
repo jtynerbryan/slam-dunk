@@ -4,10 +4,12 @@
 
 iframe {
   height: 400px;
+  /*width: 50%;*/
+  margin-bottom: 10px;
 }
 
 div.LazyLoad.is-visible {
-  margin: 20px;
+  margin-bottom: 179px;
 }
 
 div.ui.divider {
@@ -179,5 +181,29 @@ form {
   #welcome-h2 {
     font-size: 2em;
     width: 84%;
+  }
+}
+
+@media (max-width: 550px) {
+  iframe {
+    height: 250px;
+    width: 70%;
+    /*margin-bottom: -2px;*/
+  }
+
+  div.LazyLoad.is-visible {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  
+  iframe {
+    height: 150px;
+    width: 70%;
+  }
+
+  div.LazyLoad.is-visible {
+    margin-bottom: -15px;
   }
 }
