@@ -9,9 +9,23 @@ function highlightsReducer(state = {
         highlights: action.payload
       })
     case 'Search_Highlights':
-      const filteredHighlights = state.highlights.filter(highlight => {
-        return highlight.title.toLowerCase().includes(action.payload.toLowerCase())
+      let searchParams = action.payload.split(" ")
+      let filteredHighlights = []
+
+      state.highlights.map(highlight => {
+        let matchCount = 0
+
+        searchParams.map(searchString => {
+          if (highlight.title.toLowerCase().includes(searchString.toLowerCase())) {
+            matchCount++
+          }
+        })
+
+        if (matchCount === searchParams.length) {
+          filteredHighlights.push(highlight)
+        }
       })
+
       return Object.assign({}, state, {
         filteredHighlights: filteredHighlights,
         search: action.payload
