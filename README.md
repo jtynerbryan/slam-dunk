@@ -1,7 +1,7 @@
 # Slam Dunk
 * View All the latest NBA Highlights uploaded to Reddit's /r/nba
 * Search an ever-expanding archive highlights for something specific
-* View live site [here](https://slam-dunk.herokuap.com) (please be patient while Heroku wakes up)
+* View live site [here](https://slam-dunk.herokuapp.com) (please be patient while Heroku wakes up)
 * Relies on Rails API backend ([repo](https://github.com/jtynerbryan/slam-dunk-api))
 ## Features
 * Watch embedded NBA highlights, sorted in chronological order by date
