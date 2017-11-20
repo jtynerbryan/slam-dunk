@@ -7,6 +7,7 @@ import { Button } from 'semantic-ui-react'
 class Welcome extends React.Component {
 
   render () {
+    console.log(this.props.highlights);
     return (
       <div className="welcome">
         <Navbar/>

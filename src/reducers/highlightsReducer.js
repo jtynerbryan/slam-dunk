@@ -1,7 +1,8 @@
 function highlightsReducer(state = {
   highlights: [],
   filteredHighlights: [],
-  search: ""
+  search: "",
+  highlightsUpdated: false
 }, action) {
   switch (action.type) {
     case 'GET_HIGHLIGHTS':
@@ -30,6 +31,16 @@ function highlightsReducer(state = {
         filteredHighlights: filteredHighlights,
         search: action.payload
       })
+    case 'UPDATE_HIGHLIGHTS':
+        if (action.payload === "highlights updated") {
+          return Object.assign({}, state, {
+            highlightsUpdated: true
+          })
+        } else {
+          return Object.assign({}, state, {
+            highlightsUpdated: false
+          })
+        }
     default:
       return state
   }

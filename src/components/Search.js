@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { searchHighlights } from '../actions/highlights'
 import { getHighlights } from '../actions/highlights'
+import { updateHighlights } from '../actions/highlights'
 import Navbar from './Navbar'
 import Loader from './Loader'
 import FilteredHighlightCollection from './FilteredHighlightCollection'
@@ -15,6 +16,12 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
+    if (!this.props.highlightsUpdated) {
+      this.props.updateHighlights()
+    }
+  }
+
+  componentDidUpdate() {
     if (this.props.highlights.length === 0) {
       this.props.getHighlights()
     }
@@ -62,14 +69,16 @@ class Search extends React.Component {
 function mapStateToProps(state) {
   return {
     highlights: state.highlights,
-    filteredHighlights: state.filteredHighlights
+    filteredHighlights: state.filteredHighlights,
+    highlightsUpdated: state.highlightsUpdated
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     searchHighlights,
-    getHighlights
+    getHighlights,
+    updateHighlights
   }, dispatch)
 }
 

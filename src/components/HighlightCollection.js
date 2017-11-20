@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getHighlights } from '../actions/highlights'
+import { updateHighlights } from '../actions/highlights'
 import ReactHtmlParser from 'react-html-parser';
 import Navbar from './Navbar'
 import Loader from './Loader'
@@ -11,6 +12,14 @@ import { Button, Divider } from 'semantic-ui-react'
 class HighlightCollection extends React.Component {
 
   componentDidMount() {
+    // update highlights first
+    if (!this.props.highlightsUpdated) {
+      this.props.updateHighlights()
+    }
+  }
+
+  componentDidUpdate() {
+    // once highlights are updated, fetch all highlights
     if (this.props.highlights.length === 0) {
       this.props.getHighlights()
     }
@@ -29,7 +38,6 @@ class HighlightCollection extends React.Component {
                 <Button href={highlight.url} target="_blank">Video Source</Button>
                 <Divider/>
               </div>
-
             </div>
           </LazyLoad>
         )
@@ -55,13 +63,15 @@ class HighlightCollection extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    highlights: state.highlights
+    highlights: state.highlights,
+    highlightsUpdated: state.highlightsUpdated
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    getHighlights
+    getHighlights,
+    updateHighlights
   }, dispatch)
 }
 
