@@ -1,15 +1,25 @@
 import React from 'react';
-import Navbar from './Navbar'
+import Welcome from './Welcome'
+import { Dimmer, Loader} from 'semantic-ui-react'
 
-const Loader = () => {
 
-  return (
-    <div className="App" id="loader">
-    <Navbar/>
-      <h1>Loading Highlights...</h1>
-    </div>
-  )
+class LoaderComponent extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <Welcome/>
+        <Dimmer active>
+          <Loader size='huge'>Loading Highlights</Loader>
+        </Dimmer>
+      </div>
+    )
+  }
 
 }
 
-export default Loader
+
+
+
+
+export default LoaderComponent
