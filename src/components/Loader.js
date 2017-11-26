@@ -1,11 +1,35 @@
 import React from 'react';
 import Welcome from './Welcome'
 import { Dimmer, Loader} from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { updateHighlights, getHighlights } from '../actions/highlights'
+
 
 
 class LoaderComponent extends React.Component {
 
+  componentDidMount() {
+    if (this.props.highlights.length > 0) {
+      this.props.history.push('/highlights')
+    } else {
+      this.props.updateHighlights()
+    }
+
+  }
+
+  componentDidUpdate() {
+    if (this.props.highlightsUpdated && this.props.highlights.length === 0) {
+      this.props.getHighlights()
+    } else {
+      this.props.history.push('/highlights')
+    }
+
+
+  }
+
   render() {
+    console.log(this.props);
     return (
       <div>
         <Welcome/>
@@ -18,8 +42,21 @@ class LoaderComponent extends React.Component {
 
 }
 
+function mapStateToProps(state) {
+  return {
+    highlights: state.highlights,
+    highlightsUpdated: state.highlightsUpdated
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    getHighlights,
+    updateHighlights
+  }, dispatch)
+}
 
 
 
 
-export default LoaderComponent
+export default connect(mapStateToProps, mapDispatchToProps)(LoaderComponent)
