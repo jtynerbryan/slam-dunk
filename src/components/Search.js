@@ -46,7 +46,6 @@ class Search extends React.Component {
     if (this.props.highlights.length > 0) {
       return (
         <div className="App">
-          <Navbar/>
           <h2>Search for highlights</h2>
           <Form onSubmit={this.handleSubmit}>
             <Form.Input placeholder="Most highlight titles reference players, nicknames, or actions (dunk, slam, etc.)" onChange={this.handleChange}></Form.Input>

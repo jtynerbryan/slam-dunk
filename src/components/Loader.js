@@ -25,7 +25,6 @@ class LoaderComponent extends React.Component {
       this.props.history.push('/highlights')
     }
 
-
   }
 
   render() {
