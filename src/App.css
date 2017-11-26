@@ -26,7 +26,6 @@ div.ui.divider {
 }
 
 #welcome-header {
-  margin-top: 13%;
 }
 
 #welcome-h1 {
@@ -197,7 +196,7 @@ form {
 }
 
 @media (max-width: 400px) {
-  
+
   iframe {
     height: 150px;
     width: 70%;

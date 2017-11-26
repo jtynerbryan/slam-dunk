@@ -13,29 +13,6 @@ class Navbar extends Component {
     return (
       <Menu inverted>
         <Menu.Item
-          name='Slam Dunk'
-          active={activeItem === 'slam dunk'}
-          onClick={() => this.props.history.push('/')}
-        >
-          Slam Dunk
-        </Menu.Item>
-
-        <Menu.Item
-          name='Highlights'
-          active={activeItem === 'highlights'}
-          onClick={() => this.props.history.push('/highlights')}
-        >
-          Highlights
-        </Menu.Item>
-
-        <Menu.Item
-          name='Search'
-          active={activeItem === 'search'}
-          onClick={() => this.props.history.push('/search')}
-        >
-          Search
-        </Menu.Item>
-        <Menu.Item
           position='right'
           name='GitHub'
           active={activeItem === 'github'}
