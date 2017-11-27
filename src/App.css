@@ -10,6 +10,10 @@ div.ui.inverted.menu {
   border-radius: 0;
 }
 
+a.ui.button {
+  background-color: white;
+  color: black;
+}
 iframe {
   height: 400px;
   margin-bottom: 10px;
@@ -62,6 +66,8 @@ form {
 
 .highlights-component {
   background-image: url('hoop.jpg');
+  height: 100%;
+  background-repeat: repeat-y;
 }
 
 div.ui.segment {
