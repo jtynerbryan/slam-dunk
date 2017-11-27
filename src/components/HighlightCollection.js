@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import ReactHtmlParser from 'react-html-parser';
 import LazyLoad from 'react-lazy-load';
-import { Button, Divider } from 'semantic-ui-react'
+import { Button, Divider, Segment } from 'semantic-ui-react'
 
 class HighlightCollection extends React.Component {
 
@@ -12,7 +12,9 @@ class HighlightCollection extends React.Component {
         return (
           <LazyLoad height={400} offsetVertical={900} key={index}>
             <div className="highlight-container">
-              <h3>{highlight.title} ({highlight.date_created.slice(0,10)})</h3>
+              <Segment>
+                <h3>{highlight.title} ({highlight.date_created.slice(0,10)})</h3>
+              </Segment>
               { ReactHtmlParser(ReactHtmlParser(highlight.media))}
               <div>
                 <Button href={highlight.permalink} target="_blank">Reddit Post</Button>
