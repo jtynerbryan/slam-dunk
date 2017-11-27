@@ -18,7 +18,7 @@ class Highlights extends React.Component {
   render() {
     if (this.props.search === "") {
       return (
-        <div className="App">
+        <div>
           <Navbar/>
           <Search/>
           <HighlightCollection/>
@@ -26,15 +26,16 @@ class Highlights extends React.Component {
       )
     } else if (this.props.search !== "" && this.props.filteredHighlights.length === 0) {
       return (
-        <div className="App">
+        <div>
           <Navbar/>
           <Search/>
           <h2>0 results for '{this.props.search}'</h2>
+          <HighlightCollection/>
         </div>
       )
     } else if (this.props.search !== "" && this.props.filteredHighlights.length > 0) {
       return (
-        <div className="App">
+        <div>
           <Navbar/>
           <Search/>
           <FilteredHighlightCollection/>
