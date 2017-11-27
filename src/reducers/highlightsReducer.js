@@ -6,9 +6,7 @@ function highlightsReducer(state = {
 }, action) {
   switch (action.type) {
     case 'GET_HIGHLIGHTS':
-      return Object.assign({}, state, {
-        highlights: action.payload
-      })
+      return {...state, highlights: action.payload}
     case 'Search_Highlights':
       let searchParams = action.payload.split(" ")
       let filteredHighlights = []
@@ -26,24 +24,18 @@ function highlightsReducer(state = {
           filteredHighlights.push(highlight)
         }
       })
-
-      return Object.assign({}, state, {
-        filteredHighlights: filteredHighlights,
-        search: action.payload
-      })
+      return {...state, filteredHighlights: filteredHighlights, search: action.payload}
     case 'UPDATE_HIGHLIGHTS':
-        if (action.payload === "highlights updated") {
-          return Object.assign({}, state, {
-            highlightsUpdated: true
-          })
-        } else {
-          return Object.assign({}, state, {
-            highlightsUpdated: false
-          })
-        }
+      if (action.payload === "highlights updated") {
+        return {...state, highlightsUpdated: true}
+      } else {
+        return {...state, highlightsUpdated: false}
+      }
+    case 'CLEAR_FILTERED_HIGHLIGHTS':
+      return { ...state, search: "", filteredHighlights: []}
     default:
       return state
+    }
   }
-}
 
 export default highlightsReducer
