@@ -23,3 +23,9 @@ export function updateHighlights() {
     })
   }
 }
+
+export function clearFilteredHighlights() {
+  return (dispatch) => {
+    dispatch({type: 'CLEAR_FILTERED_HIGHLIGHTS'})
+  }
+}

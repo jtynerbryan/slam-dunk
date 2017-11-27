@@ -1,5 +1,8 @@
 import React from 'react';
+import { withRouter } from 'react-router'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { clearFilteredHighlights } from '../actions/highlights'
 import ReactHtmlParser from 'react-html-parser';
 import LazyLoad from 'react-lazy-load';
 import { Button, Divider } from 'semantic-ui-react'
@@ -26,6 +29,10 @@ class FilteredHighlightCollection extends React.Component {
     }
   }
 
+  clearFilteredHighlights = () => {
+    this.props.clearFilteredHighlights()
+  }
+
   render() {
     if (this.props.filteredHighlights.length > 0 && this.state.highlightsReversed === false) {
       const highlights = this.props.filteredHighlights.map((highlight, index) => {
@@ -46,11 +53,12 @@ class FilteredHighlightCollection extends React.Component {
 
       return (
         <div className="App">
-          <div className="filler">
+          <div>
             <Button icon='long arrow down' content='Date' onClick={this.handleClick}/>
-            <h2>{this.props.filteredHighlights.length} result(s) for '{this.props.search}'</h2>
-            {highlights}
+            <Button content='Latest Highlights' onClick={this.clearFilteredHighlights}/>
           </div>
+          <h2>{this.props.filteredHighlights.length} result(s) for '{this.props.search}'</h2>
+          {highlights}
         </div>
       )
     } else if (this.props.filteredHighlights.length > 0 && this.state.highlightsReversed === true) {
@@ -72,19 +80,15 @@ class FilteredHighlightCollection extends React.Component {
 
       return (
         <div className="App">
-          <div className="filler">
+          <div>
             <Button icon='long arrow up' content='Date' onClick={this.handleClick}/>
+            <Button content='Latest Highlights' onClick={this.clearFilteredHighlights}/>
+          </div>
             <h2>{this.props.filteredHighlights.length} result(s) for '{this.props.search}'</h2>
             {highlights.reverse()}
-          </div>
         </div>
       )
-    } else {
-      return (
-        <div></div>
-      )
     }
-
   }
 
 }
@@ -96,4 +100,10 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, null)(FilteredHighlightCollection)
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    clearFilteredHighlights
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(FilteredHighlightCollection))
