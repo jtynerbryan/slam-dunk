@@ -70,6 +70,7 @@ div.ui.segment {
   width: 60%;
   margin: 0 auto;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 @media (max-width: 1403px) {
@@ -172,9 +173,13 @@ div.ui.segment {
     font-size: 2em;
     width: 78%;
   }
+
+  div.ui.segment {
+    width: 75%;
+  }
 }
 
-@media (max-width: 716px) {
+@media (max-width: 756px) {
 
   iframe {
     height: 350px;
@@ -182,9 +187,12 @@ div.ui.segment {
     width: 70%;
   }
 
+  div.ui.segment {
+    width: 75%;
+  }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 725px) {
 
   #welcome-h1 {
     font-size: 5em;
@@ -195,9 +203,13 @@ div.ui.segment {
     font-size: 2em;
     width: 84%;
   }
+
+  div.ui.segment {
+    width: 70%;
+  }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   h1, h2 {
     color: #FAFAFA;
   }
@@ -211,9 +223,13 @@ div.ui.segment {
   div.LazyLoad.is-visible {
     margin-bottom: 60px;
   }
+
+  div.ui.segment {
+    width: 100%;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 537px) {
   h1, h2 {
     color: #FAFAFA;
   }
@@ -229,7 +245,5 @@ div.ui.segment {
 
   div.ui.segment {
     width: 100%;
-    margin: 0 auto;
-    margin-bottom: 10px;
   }
 }

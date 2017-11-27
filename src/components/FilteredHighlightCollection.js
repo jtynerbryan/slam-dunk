@@ -39,7 +39,7 @@ class FilteredHighlightCollection extends React.Component {
         return (
           <LazyLoad height={400} offsetVertical={900} key={index}>
             <div className="highlight-container">
-              <Segment>
+              <Segment className='highlight-title'>
                 <h3>{highlight.title} ({highlight.date_created.slice(0,10)})</h3>
               </Segment>
               { ReactHtmlParser(ReactHtmlParser(highlight.media))}
@@ -68,7 +68,7 @@ class FilteredHighlightCollection extends React.Component {
         return (
           <LazyLoad height={400} offsetVertical={900} key={index}>
             <div className="highlight-container">
-              <Segment>
+              <Segment className='highlight-title'>
                 <h3>{highlight.title} ({highlight.date_created.slice(0,10)})</h3>
               </Segment>
               { ReactHtmlParser(ReactHtmlParser(highlight.media))}
