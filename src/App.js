@@ -14,7 +14,6 @@ class App extends Component {
         <div className="App">
           <Route path='/highlights' component={Highlights}/>
           <Route exact path='/' component={Welcome}/>
-          <Route exact path='/search' component={Search}/>
           <Route exact path='/load-highlights' component={Loader}/>
         </div>
       </Router>

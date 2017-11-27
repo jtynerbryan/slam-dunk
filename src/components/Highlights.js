@@ -9,6 +9,12 @@ import FilteredHighlightCollection from './FilteredHighlightCollection'
 
 class Highlights extends React.Component {
 
+  componentDidMount() {
+    if (this.props.highlights.length === 0) {
+      this.props.history.push('/')
+    }
+  }
+
   render() {
     if (this.props.search === "") {
       return (
@@ -16,6 +22,14 @@ class Highlights extends React.Component {
           <Navbar/>
           <Search/>
           <HighlightCollection/>
+        </div>
+      )
+    } else if (this.props.search !== "") {
+      return (
+        <div className="App">
+          <Navbar/>
+          <Search/>
+          <FilteredHighlightCollection/>
         </div>
       )
     }
