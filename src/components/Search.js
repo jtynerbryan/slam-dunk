@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { searchHighlights } from '../actions/highlights'
 import { getHighlights } from '../actions/highlights'
 import { updateHighlights } from '../actions/highlights'
-import { Button, Form} from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 
 class Search extends React.Component {
 

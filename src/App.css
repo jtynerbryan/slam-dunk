@@ -2,9 +2,16 @@
   text-align: center;
 }
 
+h1, h2 {
+  color: white;
+}
+
+div.ui.inverted.menu {
+  border-radius: 0;
+}
+
 iframe {
   height: 400px;
-  /*width: 50%;*/
   margin-bottom: 10px;
 }
 
@@ -30,6 +37,10 @@ form {
   color: white;
 }
 
+#welcome-header {
+  margin-top: 10%;
+}
+
 #welcome-h1 {
   font-size: 7.5em;
   color: #FF5722;
@@ -49,10 +60,14 @@ form {
   margin-top: 1%;
 }
 
-#loader {
-  background-image: url('court.jpg');
-  height: 100vh;
-  color: white;
+.highlights-component {
+  background-image: url('hoop.jpg');
+}
+
+div.ui.segment {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 1403px) {
@@ -181,6 +196,10 @@ form {
 }
 
 @media (max-width: 550px) {
+  h1, h2 {
+    color: #FAFAFA;
+  }
+
   iframe {
     height: 250px;
     width: 70%;
@@ -193,6 +212,9 @@ form {
 }
 
 @media (max-width: 400px) {
+  h1, h2 {
+    color: #FAFAFA;
+  }
 
   iframe {
     height: 150px;
@@ -200,6 +222,12 @@ form {
   }
 
   div.LazyLoad.is-visible {
-    margin-bottom: -15px;
+    margin-bottom: 5px;
+  }
+
+  div.ui.segment {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
   }
 }
