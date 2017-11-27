@@ -24,7 +24,15 @@ class Highlights extends React.Component {
           <HighlightCollection/>
         </div>
       )
-    } else if (this.props.search !== "") {
+    } else if (this.props.search !== "" && this.props.filteredHighlights.length === 0) {
+      return (
+        <div className="App">
+          <Navbar/>
+          <Search/>
+          <h2>0 results for '{this.props.search}'</h2>
+        </div>
+      )
+    } else if (this.props.search !== "" && this.props.filteredHighlights.length > 0) {
       return (
         <div className="App">
           <Navbar/>

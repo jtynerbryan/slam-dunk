@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Highlights from './components/Highlights'
 import Welcome from './components/Welcome'
-import Search from './components/Search'
 import Loader from './components/Loader'
 
 class App extends Component {

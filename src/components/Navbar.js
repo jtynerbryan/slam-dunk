@@ -21,7 +21,6 @@ class Navbar extends Component {
         </Menu.Item>
 
         <Menu.Item
-          position='right'
           name='GitHub'
           active={activeItem === 'github'}
           onClick={this.handleItemClick}
