@@ -21,22 +21,6 @@ class Navbar extends Component {
         </Menu.Item>
 
         <Menu.Item
-          name='Highlights'
-          active={activeItem === 'highlights'}
-          onClick={() => this.props.history.push('/highlights')}
-        >
-          Highlights
-        </Menu.Item>
-
-        <Menu.Item
-          name='Search'
-          active={activeItem === 'search'}
-          onClick={() => this.props.history.push('/search')}
-        >
-          Search
-        </Menu.Item>
-        <Menu.Item
-          position='right'
           name='GitHub'
           active={activeItem === 'github'}
           onClick={this.handleItemClick}

@@ -19,14 +19,15 @@ div.ui.divider {
   margin-bottom: 20px;
 }
 
+form {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
 .welcome {
   background-image: url('hoop.jpg');
   height: 100vh;
   color: white;
-}
-
-#welcome-header {
-  margin-top: 13%;
 }
 
 #welcome-h1 {
@@ -46,11 +47,6 @@ div.ui.divider {
   width: 46%;
   margin: 0 auto;
   margin-top: 1%;
-}
-
-form {
-  width: 50%;
-  margin: 0 auto;
 }
 
 #loader {
@@ -197,7 +193,7 @@ form {
 }
 
 @media (max-width: 400px) {
-  
+
   iframe {
     height: 150px;
     width: 70%;

@@ -12,10 +12,10 @@ function highlightsReducer(state = {
     case 'Search_Highlights':
       let searchParams = action.payload.split(" ")
       let filteredHighlights = []
-
+      // eslint-disable-next-line
       state.highlights.map(highlight => {
         let matchCount = 0
-
+        // eslint-disable-next-line
         searchParams.map(searchString => {
           if (highlight.title.toLowerCase().includes(searchString.toLowerCase())) {
             matchCount++
