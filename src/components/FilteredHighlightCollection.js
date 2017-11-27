@@ -37,7 +37,7 @@ class FilteredHighlightCollection extends React.Component {
     if (this.props.filteredHighlights.length > 0 && this.state.highlightsReversed === false) {
       const highlights = this.props.filteredHighlights.map((highlight, index) => {
         return (
-          <LazyLoad height={400} offsetVertical={900} key={index}>
+          <LazyLoad height={430} offsetVertical={900} key={index}>
             <div className="highlight-container">
               <Segment className='highlight-title'>
                 <h3>{highlight.title} ({highlight.date_created.slice(0,10)})</h3>
@@ -66,7 +66,7 @@ class FilteredHighlightCollection extends React.Component {
     } else if (this.props.filteredHighlights.length > 0 && this.state.highlightsReversed === true) {
       const highlights = this.props.filteredHighlights.map((highlight, index) => {
         return (
-          <LazyLoad height={400} offsetVertical={900} key={index}>
+          <LazyLoad height={430} offsetVertical={900} key={index}>
             <div className="highlight-container">
               <Segment className='highlight-title'>
                 <h3>{highlight.title} ({highlight.date_created.slice(0,10)})</h3>
