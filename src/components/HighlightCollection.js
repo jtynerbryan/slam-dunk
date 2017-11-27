@@ -10,7 +10,7 @@ class HighlightCollection extends React.Component {
   render() {
       const highlights = this.props.highlights.map((highlight, index) => {
         return (
-          <LazyLoad height={400} offsetVertical={900} key={index}>
+          <LazyLoad height={450} offsetVertical={900} key={index}>
             <div className="highlight-container">
               <Segment>
                 <h3>{highlight.title} ({highlight.date_created.slice(0,10)})</h3>
