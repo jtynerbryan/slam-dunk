@@ -9,12 +9,8 @@ import { Button, Divider, Segment } from 'semantic-ui-react'
 
 class FilteredHighlightCollection extends React.Component {
 
-  constructor() {
-    super()
-
-    this.state = {
-      highlightsReversed: false
-    }
+  state = {
+    highlightsReversed: false
   }
 
   handleClick = () => {

@@ -15,7 +15,6 @@ class LoaderComponent extends React.Component {
     } else {
       this.props.updateHighlights()
     }
-
   }
 
   componentDidUpdate() {
@@ -24,7 +23,6 @@ class LoaderComponent extends React.Component {
     } else {
       this.props.history.push('/highlights')
     }
-
   }
 
   render() {
