@@ -62,8 +62,8 @@ form {
 
 .highlights-component {
   background-image: url('hoop.jpg');
-  height: 100%;
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 div.ui.segment {
