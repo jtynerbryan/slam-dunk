@@ -1,46 +1,44 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router'
-import Navbar from './Navbar'
-import Search from './Search'
-import HighlightCollection from './HighlightCollection'
-import FilteredHighlightCollection from './FilteredHighlightCollection'
-
+import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import Navbar from './Navbar';
+import Search from './Search';
+import HighlightCollection from './HighlightCollection';
+import FilteredHighlightCollection from './FilteredHighlightCollection';
 
 class Highlights extends React.Component {
-
   componentDidMount() {
     if (this.props.highlights.length === 0) {
-      this.props.history.push('/')
+      this.props.history.push('/');
     }
   }
 
   render() {
-    if (this.props.search === "") {
+    if (this.props.search === '') {
       return (
-        <div className='highlights-component'>
-          <Navbar/>
-          <Search/>
-          <HighlightCollection/>
+        <div className="highlights-component">
+          <Navbar />
+          <Search />
+          <HighlightCollection />
         </div>
-      )
-    } else if (this.props.search !== "" && this.props.filteredHighlights.length === 0) {
+      );
+    } else if (this.props.search !== '' && this.props.filteredHighlights.length === 0) {
       return (
-        <div className='highlights-component'>
-          <Navbar/>
-          <Search/>
+        <div className="highlights-component">
+          <Navbar />
+          <Search />
           <h2>0 results for '{this.props.search}'</h2>
-          <HighlightCollection/>
+          <HighlightCollection />
         </div>
-      )
-    } else if (this.props.search !== "" && this.props.filteredHighlights.length > 0) {
+      );
+    } else if (this.props.search !== '' && this.props.filteredHighlights.length > 0) {
       return (
-        <div className='highlights-component'>
-          <Navbar/>
-          <Search/>
-          <FilteredHighlightCollection/>
+        <div className="highlights-component">
+          <Navbar />
+          <Search />
+          <FilteredHighlightCollection />
         </div>
-      )
+      );
     }
   }
 }
@@ -51,7 +49,7 @@ function mapStateToProps(state) {
     filteredHighlights: state.filteredHighlights,
     highlightsUpdated: state.highlightsUpdated,
     search: state.search
-  }
+  };
 }
 
-export default connect(mapStateToProps, null)(withRouter(Highlights))
+export default withRouter(connect(mapStateToProps, null)(Highlights));
