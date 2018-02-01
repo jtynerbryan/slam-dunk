@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders without unexpected changes 1`] = `
+<div
+  className="ui inverted menu"
+>
+  <a
+    className="right item"
+    href="http://github.com/jtynerbryan"
+    onClick={[Function]}
+    target="_blank"
+  >
+    GitHub
+  </a>
+</div>
+`;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-// import { withRouter } from 'react-router'
 
 class Navbar extends Component {
   state = {}

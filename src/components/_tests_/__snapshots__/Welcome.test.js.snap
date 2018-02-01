@@ -8,13 +8,7 @@ exports[`Welcome Component renders correctly 1`] = `
     className="ui inverted menu"
   >
     <a
-      className="item"
-      onClick={[Function]}
-    >
-      Slam Dunk
-    </a>
-    <a
-      className="item"
+      className="right item"
       href="http://github.com/jtynerbryan"
       onClick={[Function]}
       target="_blank"
