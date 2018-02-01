@@ -28,7 +28,7 @@ export class LoaderComponent extends React.Component {
   render() {
     return (
       <div>
-        <Welcome/>
+        <Welcome history={this.props.history}/>
         <Dimmer active>
           <Loader size='huge'>Loading Highlights</Loader>
         </Dimmer>

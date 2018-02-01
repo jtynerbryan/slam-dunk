@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-import { withRouter } from 'react-router'
+// import { withRouter } from 'react-router'
 
 class Navbar extends Component {
   state = {}
@@ -13,14 +13,7 @@ class Navbar extends Component {
     return (
       <Menu inverted>
         <Menu.Item
-          name='Slam Dunk'
-          active={activeItem === 'slam dunk'}
-          onClick={() => this.props.history.push('/')}
-        >
-          Slam Dunk
-        </Menu.Item>
-
-        <Menu.Item
+          position='right'
           name='GitHub'
           active={activeItem === 'github'}
           onClick={this.handleItemClick}
@@ -33,4 +26,4 @@ class Navbar extends Component {
   }
 }
 
-export default withRouter(Navbar)
+export default Navbar
