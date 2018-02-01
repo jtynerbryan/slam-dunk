@@ -7,7 +7,7 @@ import { updateHighlights, getHighlights } from '../actions/highlights'
 
 
 
-class LoaderComponent extends React.Component {
+export class LoaderComponent extends React.Component {
 
   componentDidMount() {
     if (this.props.highlights.length > 0) {
