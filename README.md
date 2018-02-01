@@ -6,7 +6,7 @@
 ## Features
 * Watch embedded NBA highlights, sorted in chronological order by date
 * Includes direct links to embed source and the [/r/nba](https://reddit.com/r/nba) post for every highlight
-* [React Lazy Load](https://www.npmjs.com/package/react-lazy-load) allows higlights to be loaded on demand, improving page load time
+* [React Lazy Load](https://www.npmjs.com/package/react-lazy-load) allows highlights to be loaded on demand, improving page load time
 * Search to find highlights by title (multiple terms allowed)
 ## Architecture
 * This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
