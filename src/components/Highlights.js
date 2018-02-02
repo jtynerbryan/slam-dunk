@@ -6,7 +6,7 @@ import Search from './Search';
 import HighlightCollection from './HighlightCollection';
 import FilteredHighlightCollection from './FilteredHighlightCollection';
 
-class Highlights extends React.Component {
+export class Highlights extends React.Component {
   componentDidMount() {
     if (this.props.highlights.length === 0) {
       this.props.history.push('/');
