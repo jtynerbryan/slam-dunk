@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Highlights from './components/Highlights'
-import Loader from './components/Loader'
+import LoaderComponent from './components/Loader'
 
 class App extends Component {
 
@@ -11,7 +11,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route path='/highlights' component={Highlights}/>
-          <Route exact path='/' component={Loader}/>
+          <Route exact path='/' component={LoaderComponent}/>
         </div>
       </Router>
     )

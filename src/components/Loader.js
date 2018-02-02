@@ -5,8 +5,6 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { updateHighlights, getHighlights } from '../actions/highlights'
 
-
-
 export class LoaderComponent extends React.Component {
 
   componentDidMount() {
