@@ -6,7 +6,7 @@ import { getHighlights } from '../actions/highlights'
 import { updateHighlights } from '../actions/highlights'
 import { Button, Form } from 'semantic-ui-react'
 
-class Search extends React.Component {
+export class Search extends React.Component {
 
   state = {
     searchValue: ''
