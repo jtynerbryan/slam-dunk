@@ -11,14 +11,12 @@ export class LoaderComponent extends React.Component {
     if (this.props.highlights.length > 0) {
       this.props.history.push('/highlights')
     } else {
-      this.props.updateHighlights()
+      this.props.getHighlights()
     }
   }
 
   componentDidUpdate() {
-    if (this.props.highlightsUpdated && this.props.highlights.length === 0) {
-      this.props.getHighlights()
-    } else {
+    if (this.props.highlights.length > 0) {
       this.props.history.push('/highlights')
     }
   }
